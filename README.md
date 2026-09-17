@@ -92,10 +92,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools\make_test_audio.ps1
 
 ## 文档
 
-| 文档 | 内容 |
-|---|---|
-| [docs/技术细节.md](docs/技术细节.md) | 架构、目录结构、完整构建步骤、C API 参考、错误码、全部性能数据、踩过的坑、ANC 路线图 |
-| [docs/AEC3_CSharp_改造方案.md](docs/AEC3_CSharp_改造方案.md) | 完整改造方案 + 实测报告 |
+**[docs/技术细节.md](docs/技术细节.md)** —— 架构（两张图）、完整目录结构、
+构建步骤详解、C API 参考与错误码、全部性能数据、24 项自动化验证清单、
+8 条踩坑记录、ANC 降噪路线图。
 
 ---
 
