@@ -1,0 +1,44 @@
+# Normalise line endings so the repo behaves the same on every machine.
+#
+# Default: store LF in the repository, check out CRLF on Windows. This is the
+# right choice for a Windows-only project: MSBuild/vcxproj and the C# compiler
+# are happiest with CRLF, while git stays platform-neutral.
+* text=auto
+
+# Windows-only source and project files: keep CRLF on checkout.
+*.cs        text eol=crlf
+*.csproj    text eol=crlf
+*.sln       text eol=crlf
+*.vcxproj   text eol=crlf
+*.filters   text eol=crlf
+*.resx      text eol=crlf
+*.config    text eol=crlf
+
+# Scripts and the C sources they compile: pin LF so the checked-out bytes match
+# what the build and the verification scripts were validated against.
+*.ps1       text eol=lf
+*.c         text eol=lf
+*.h         text eol=lf
+*.cc        text eol=lf
+*.cpp       text eol=lf
+
+# Documentation: LF, diff-friendly.
+*.md        text eol=lf
+*.txt       text eol=lf
+LICENSE     text eol=lf
+.gitignore  text eol=lf
+.gitattributes text eol=lf
+
+# Vendored third-party trees keep their own line endings untouched.
+AEC3-master/base/abseil/**   -text
+AEC3-master/base/jsoncpp/**  -text
+
+# Binary assets must never be mangled.
+*.wav       binary
+*.dll       binary
+*.lib       binary
+*.exe       binary
+*.pdb       binary
+*.png       binary
+*.jpg       binary
+*.ico       binary

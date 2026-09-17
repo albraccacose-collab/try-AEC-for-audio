@@ -1,0 +1,72 @@
+# ---------------------------------------------------------------- build output
+# AEC3.sln writes everything (libs, pdb, ilk, exe, dll) into output/<Cfg>_<Plat>/
+AEC3-master/output/
+output/
+
+# Android packaging: a second, near-duplicate copy of audio_processing/ plus the
+# NDK build, ~9.7 MB. This project targets Windows only and the copy is never
+# compiled or referenced here, so it is not published.
+AEC3-master/android/
+
+# MSVC intermediate / IDE state
+*.ilk
+*.exp
+*.obj
+*.pdb
+*.idb
+*.tlog
+*.lastbuildstate
+
+# .NET build output
+[Aa]ec[Tt]ool[Aa]pp_2/[Bb]in/
+[Aa]ec[Tt]ool[Aa]pp_2/[Oo]bj/
+bin/
+obj/
+
+# ---------------------------------------------------------------- IDE
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.VC.opendb
+*.opendb
+*.aps
+*.ncb
+*.sdf
+*.opensdf
+*.cache
+*.svclog
+*.psess
+*.vsp
+
+# ---------------------------------------------------------------- this machine
+# Archived before deletion; kept locally, never published.
+_removed_backup/
+
+# Built DLLs and test binaries are copied/created next to whatever consumes
+# them; never commit them. All of these are rebuilt by the tools/ scripts.
+tools/aec_api.dll
+tools/aec_api.lib
+tools/aec_c_api_test.exe
+tools/aec_c_api_test.obj
+tools/cs_interop_test.exe
+tools/cs_interop_test.pdb
+tools/obj/
+AecToolApp_2/bin/x64/Debug/aec_api.dll
+
+# ---------------------------------------------------------------- generated audio
+# tools/make_test_audio.ps1 regenerates the synthetic pair on demand, so the
+# test wavs are not committed. They also collide by filename with third-party
+# dataset files that must not be redistributed.
+testdata/
+*.wav
+
+# ---------------------------------------------------------------- misc
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.log
+*.tmp
